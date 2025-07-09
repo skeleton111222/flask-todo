@@ -1,0 +1,73 @@
+some message is shown 
+import javax.swing.*;
+    import java.awt.event.ActionEvent;
+    import java.awt.event.ActionListener;
+
+
+    public class Main {
+
+
+    public static class ayush {
+        public void Honok() {
+
+            JFrame main_frame = new JFrame("NCIT");
+            main_frame.setSize(400, 300);
+            main_frame.setLayout(null);
+            main_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+            JButton button = new JButton("Show Text");
+            button.setBounds(50, 50, 120, 30);
+
+            JButton button1 = new JButton("Click Me");
+            button1.setBounds(150,50,120,30);
+
+            JButton button2 = new JButton("Touch Me");
+            button2.setBounds(250,50,120,30);
+
+
+
+
+
+            main_frame.add(button);
+            main_frame.add(button1);
+            main_frame.add(button2);
+
+
+            class A implements ActionListener{
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if (e.getSource()==button2){
+                        JOptionPane.showMessageDialog(main_frame, "Honokeyyyy");
+
+                    } else if (e.getSource()==button1) {
+                        JOptionPane.showMessageDialog(main_frame, "I am 1");
+
+                    }else  {
+                        JOptionPane.showMessageDialog(main_frame, "I am 0");
+
+                    }
+
+                }
+            }
+
+            A listener = new A();
+
+            button.addActionListener(listener);
+            button1.addActionListener(listener);
+            button2.addActionListener(listener);
+
+
+            main_frame.setVisible(true);
+        }
+ 
+
+    }
+
+    public static void main(String[] args) {
+
+        new ayush();
+
+    }
+}
